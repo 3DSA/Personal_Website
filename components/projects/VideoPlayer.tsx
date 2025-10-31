@@ -3,10 +3,14 @@
 import React, { useState } from 'react'
 import dynamic from 'next/dynamic'
 import { Play, X } from 'lucide-react'
-import { getVideoEmbedUrl } from '@/lib/utils'
 import { cn } from '@/lib/utils'
 
-const ReactPlayer = dynamic(() => import('react-player'), { ssr: false }) as any
+const ReactPlayerComponent = dynamic(() => import('react-player'), {
+  ssr: false,
+  loading: () => <div className="w-full h-full flex items-center justify-center bg-black text-white">Loading player...</div>
+})
+
+const ReactPlayer = ReactPlayerComponent as any
 
 interface VideoPlayerProps {
   url: string
@@ -27,7 +31,6 @@ export function VideoPlayer({
 }: VideoPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false)
   const [showModal, setShowModal] = useState(false)
-  const embedUrl = getVideoEmbedUrl(url, type)
 
   const handlePlayClick = () => {
     setShowModal(true)
@@ -81,13 +84,22 @@ export function VideoPlayer({
 
             {/* Video Player */}
             <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
-              <ReactPlayer
-                url={embedUrl}
-                playing={isPlaying}
-                controls
-                width="100%"
-                height="100%"
-              />
+              {type === 'youtube' ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${url.includes('youtu.be/') ? url.split('youtu.be/')[1]?.split('?')[0] : url.split('v=')[1]?.split('&')[0]}?autoplay=1`}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <ReactPlayer
+                  url={url}
+                  playing={isPlaying}
+                  controls
+                  width="100%"
+                  height="100%"
+                />
+              )}
             </div>
           </div>
         </div>
@@ -106,15 +118,18 @@ interface InlineVideoPlayerProps {
 }
 
 export function InlineVideoPlayer({ url, type, className }: InlineVideoPlayerProps) {
-  const embedUrl = getVideoEmbedUrl(url, type)
-
   return (
     <div className={cn('relative aspect-video bg-black rounded-lg overflow-hidden', className)}>
       <ReactPlayer
-        url={embedUrl}
+        url={url}
         controls
         width="100%"
         height="100%"
+        config={{
+          youtube: {
+            playerVars: { showinfo: 1 }
+          }
+        }}
       />
     </div>
   )

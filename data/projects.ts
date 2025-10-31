@@ -9,6 +9,8 @@ export const projects: Project[] = [
       'A platform enabling non-technical users to launch AI agents via natural language, automating prompt, schema, and workflow generation.',
     longDescription: `Enabled non-technical users to launch AI agents via natural language, cutting setup time from hours to minutes through automated prompt, schema, and workflow generation. Drove enterprise adoption by automating agent provisioning, secure context retrieval, and multi-surface publishing (chat, APIs, embeds, share links). Built a scalable multi-agent architecture with LangGraph, LangChain, adaptive memory, and resilient integration patterns.`,
     image: '/images/projects/agentic-platform-thumbnail.jpg',
+    videoUrl: 'https://youtu.be/RolvV46x11A',
+    videoType: 'youtube',
     techStack: [
       'LangGraph',
       'LangChain',

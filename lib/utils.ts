@@ -61,7 +61,25 @@ export function getVideoEmbedUrl(url: string, type: 'youtube' | 'vimeo' | 'local
   if (type === 'local') return url
 
   if (type === 'youtube') {
-    const videoId = url.split('v=')[1]?.split('&')[0] || url.split('/').pop()
+    let videoId = ''
+
+    // Handle youtube.com/watch?v= format
+    if (url.includes('v=')) {
+      videoId = url.split('v=')[1]?.split('&')[0] || ''
+    }
+    // Handle youtu.be/ format
+    else if (url.includes('youtu.be/')) {
+      videoId = url.split('youtu.be/')[1]?.split('?')[0] || ''
+    }
+    // Handle youtube.com/embed/ format
+    else if (url.includes('/embed/')) {
+      videoId = url.split('/embed/')[1]?.split('?')[0] || ''
+    }
+    // Fallback to last part of URL
+    else {
+      videoId = url.split('/').pop()?.split('?')[0] || ''
+    }
+
     return `https://www.youtube.com/embed/${videoId}`
   }
 
@@ -80,7 +98,25 @@ export function getVideoThumbnail(url: string, type: 'youtube' | 'vimeo' | 'loca
   if (type === 'local') return url
 
   if (type === 'youtube') {
-    const videoId = url.split('v=')[1]?.split('&')[0] || url.split('/').pop()
+    let videoId = ''
+
+    // Handle youtube.com/watch?v= format
+    if (url.includes('v=')) {
+      videoId = url.split('v=')[1]?.split('&')[0] || ''
+    }
+    // Handle youtu.be/ format
+    else if (url.includes('youtu.be/')) {
+      videoId = url.split('youtu.be/')[1]?.split('?')[0] || ''
+    }
+    // Handle youtube.com/embed/ format
+    else if (url.includes('/embed/')) {
+      videoId = url.split('/embed/')[1]?.split('?')[0] || ''
+    }
+    // Fallback to last part of URL
+    else {
+      videoId = url.split('/').pop()?.split('?')[0] || ''
+    }
+
     return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
   }
 
