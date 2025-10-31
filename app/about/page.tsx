@@ -41,10 +41,14 @@ export default function AboutPage() {
         >
           <Card>
             <CardContent className="p-8">
-              <div className="flex flex-col md:flex-row gap-8 items-center">
-                {/* Profile Image Placeholder */}
-                <div className="w-48 h-48 rounded-full bg-gradient-to-br from-primary-400 to-secondary-400 flex items-center justify-center text-white text-6xl font-bold flex-shrink-0">
-                  DS
+              <div className="flex flex-col md:flex-row gap-8 md:items-start items-center">
+                {/* Profile Image */}
+                <div className="w-48 h-48 rounded-full overflow-hidden flex-shrink-0 ring-4 ring-primary-100 dark:ring-primary-900">
+                  <img
+                    src="/images/image_of_me.png"
+                    alt="Dhruv Susheelkar"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 {/* Bio Text */}
@@ -53,17 +57,18 @@ export default function AboutPage() {
                     Hi, I'm Dhruv Susheelkar
                   </h2>
                   <p className="text-secondary-600 dark:text-secondary-400 mb-4">
-                    I'm a passionate software developer with a strong focus on building scalable
-                    web applications and creating exceptional user experiences. With expertise in
-                    modern web technologies, I specialize in full-stack development using React,
-                    Next.js, TypeScript, and Node.js.
+                    I'm an AI/ML Engineer with a passion for building intelligent systems and
+                    agentic platforms. With expertise in deep learning, natural language processing,
+                    and multi-agent architectures, I specialize in developing scalable AI solutions
+                    using LangGraph, LangChain, TensorFlow, and PyTorch.
                   </p>
                   <p className="text-secondary-600 dark:text-secondary-400 mb-6">
-                    I'm constantly learning and staying up-to-date with the latest technologies
-                    and best practices in web development. I enjoy tackling complex problems and
-                    turning ideas into reality through clean, maintainable code.
+                    I'm constantly exploring cutting-edge AI technologies and research, from
+                    transformer models to vision systems. I enjoy tackling complex machine learning
+                    challenges and turning innovative ideas into production-ready AI applications
+                    that drive real-world impact.
                   </p>
-                  <a href="/resume.pdf" download>
+                  <a href="/Dhruv_Resume.pdf" download="Dhruv_Resume.pdf">
                     <Button>
                       <Download className="w-4 h-4 mr-2" />
                       Download Resume

@@ -81,6 +81,7 @@ export const projects: Project[] = [
     image: '/images/projects/sp500-thumbnail.jpg',
     techStack: ['Python', 'Pandas', 'NumPy', 'Scikit-learn'],
     category: ['Machine Learning', 'Data Science'],
+    githubUrl: 'https://github.com/3DSA/Stock_Predictor',
     featured: false,
     date: '2023-11',
     highlights: [
@@ -100,6 +101,7 @@ export const projects: Project[] = [
     image: '/images/projects/dev-journal-thumbnail.jpg',
     techStack: ['JavaScript', 'Electron', 'React', 'Node.js'],
     category: ['Web Development'],
+    githubUrl: 'https://github.com/cse110-sp24-group2/cse110-sp24-group2',
     featured: false,
     date: '2023-08',
     highlights: [

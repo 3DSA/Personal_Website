@@ -56,10 +56,10 @@ export default function ContactPage() {
                         Email
                       </h3>
                       <a
-                        href="mailto:dsusheelkar@ucsd.edu"
+                        href="mailto:dsusheelkar@gmail.com"
                         className="text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                       >
-                        dsusheelkar@ucsd.edu
+                        dsusheelkar@gmail.com
                       </a>
                     </div>
                   </div>

@@ -25,8 +25,8 @@ export default function ProjectsPage() {
             My Projects
           </h1>
           <p className="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
-            Explore my portfolio of projects showcasing my skills in web development,
-            software engineering, and problem-solving. Many projects include video demos!
+            Explore my portfolio of AI/ML projects and full-stack applications, from deep learning
+            models and agentic systems to scalable web platforms. Many projects include live demos!
           </p>
         </motion.div>
 

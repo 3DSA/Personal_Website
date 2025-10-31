@@ -81,12 +81,12 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
-            <Link href="/resume.pdf" target="_blank">
+            <a href="/Dhruv_Resume.pdf" download="Dhruv_Resume.pdf">
               <Button variant="outline" size="lg" className="group">
                 <Download className="mr-2 h-5 w-5 transition-transform group-hover:translate-y-1" />
                 Download Resume
               </Button>
-            </Link>
+            </a>
           </motion.div>
 
           {/* Scroll indicator */}

@@ -43,11 +43,8 @@ export const SKILL_CATEGORIES = [
 export const PROJECT_CATEGORIES = [
   'All',
   'Web Development',
-  'Mobile Development',
   'Machine Learning',
   'Data Science',
-  'DevOps',
-  'Other',
 ] as const
 
 /**

@@ -13,7 +13,7 @@ export const socialLinks: Social[] = [
   },
   {
     name: 'Email',
-    url: 'mailto:dsusheelkar@ucsd.edu',
+    url: 'mailto:dsusheelkar@gmail.com',
     icon: 'mail',
   },
 ]
